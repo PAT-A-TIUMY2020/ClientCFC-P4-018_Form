@@ -45,5 +45,17 @@ namespace ClientCFC_P4_018_Form
             c = a - b;
             textBox10.Text = c.ToString();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ChannelFactory<IMatematika> objChannel = new ChannelFactory<IMatematika>(bind, "http://localhost:1907");
+            IMatematika obj = objChannel.CreateChannel();
+
+            int a, b, c;
+            a = Convert.ToInt32(textBox6.Text);
+            b = Convert.ToInt32(textBox7.Text);
+            c = a * b;
+            textBox11.Text = c.ToString();
+        }
     }
 }
